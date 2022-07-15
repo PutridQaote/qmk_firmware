@@ -15,7 +15,7 @@
  */
  #include "nature.h"
  #ifdef RGB_MATRIX_ENABLE
- const is31_led PROGMEM g_is31_leds[DRIVER_LED_TOTAL] = {
+ const is31_led g_is31_leds[DRIVER_LED_TOTAL] = {
 
 	{0, C1_3, C2_3, C3_3},   // L01
 	{0, C1_4, C2_4, C3_4},   // L02
@@ -146,9 +146,53 @@ void suspend_wakeup_init_kb(void) {
     suspend_wakeup_init_user();
 }
 
- __attribute__ ((weak)) void rgb_matrix_indicators_user(void) {
+
+ //__attribute__ ((weak)) void rgb_matrix_indicators_user(void) {
+ void rgb_matrix_indicators_user(void) {
+    uint8_t layer = biton32(layer_state);
+       switch (layer) {
+         case 0 :
+           rgb_matrix_set_color(78, 0, 0, 0); //middle ctrl off because I use it as spacebar
+           //rgb_matrix_set_color(66, 255, 111, 111); // middle enter pink
+           //rgb_matrix_set_color(51, 255, 111, 111); // backspace pink
+           //rgb_matrix_mode(rgb_matrix_solid_reactive_wide); //doesn't work??
+         break;
+         //case 2: // fn key
+           //rgb_matrix_set_color_all(255, 255, 255); //All keys white
+           //rgb_matrix_set_color(82, 0, 0, 0); // fn off
+         //break;
+         case 3:
+           rgb_matrix_set_color_all(0, 0, 0); //All keys off
+           rgb_matrix_set_color(23, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(24, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(25, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(38, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(39, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(40, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(41, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(53, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(54, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(55, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(56, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(68, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(69, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(70, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(71, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(80, 0, 255, 111); // numpad green
+           rgb_matrix_set_color(81, 0, 255, 111); // numpad green
+           //rgb_matrix_set_color(60, 255, 111, 111); // lctrl button to toggle numpad
+           rgb_matrix_set_color(83, 255, 111, 111); // rctrl button to toggle numpad
+           rgb_matrix_set_color(21, 255, 111, 111); // xbows logo thing
+         break;
+         case 1: // Erin's Layer
+           rgb_matrix_set_color_all(255, 111, 111); //All keys pink
+           //rgb_matrix_set_color(14, 60, 255, 111); // print screen green - supposed to be how I get back to my layer
+         break;
+          }
     if (host_keyboard_led_state().caps_lock) {
+        //rgb_matrix_set_color(45, 0xFF, 0x00, 0x00);
         rgb_matrix_set_color(45, 0xFF, 0xFF, 0xFF);
+        //rgb_matrix_set_color(45, 255, 192, 203);
     }
 }
 
