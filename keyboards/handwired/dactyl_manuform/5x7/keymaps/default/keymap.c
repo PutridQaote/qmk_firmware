@@ -24,7 +24,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_CAPS,   KC_LGUI, TAB_L,   TAB_R,
                                     TT(_FN), KC_SPC,
                                     KC_END, KC_HOME,
-                                    KC_PSCR, TASK,
         // right hand
                           KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS,  KC_EQL,   KC_GRV,
                           KC_RBRC, KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,     KC_BSLS,
@@ -45,7 +44,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MSTP,   KC_MPLY,   KC_MPRV,   KC_MNXT,
                                     _______, _______,
                                     _______, _______,
-                                    _______, _______,
         // right hand
                           KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,    KC_F12,    _______,
                           _______,   _______,   _______,   _______,   _______,   _______,   _______,
@@ -64,7 +62,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,   _______,   _______,   _______,   _______,  _______,
         _______,   _______,   _______,   _______,   _______,   _______,
         _______,   _______,   _______,   _______,
-                                    _______, _______,
                                     _______, _______,
                                     _______, _______,
         // right hand
