@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER 0x0001
 #define PRODUCT    Dactyl-Manuform (5x7)
 
-// #define USE_I2C
-//#define SOFT_SERIAL_PIN D0
+#define USE_I2C
+//define SOFT_SERIAL_PIN D0
 //#define SPLIT_USB_DETECT
 #define MASTER_LEFT
 
