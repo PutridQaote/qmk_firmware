@@ -24,9 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER 0x0001
 #define PRODUCT    Dactyl-Manuform (5x7)
 
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+
 #define USE_I2C
-//define SOFT_SERIAL_PIN D0
-//#define SPLIT_USB_DETECT
 #define MASTER_LEFT
 
 /* key matrix size */
@@ -39,6 +40,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { B7, D5, C7, F1, F0, B6, F5 }
 
 #define DIODE_DIRECTION COL2ROW
+
+//  Mouse Stuff
+# define SPLIT_POINTING_ENABLE
+# define POINTING_DEVICE_LEFT
+# define PMW3360_CS_PIN F7
+# define PMW3360_CPI 12000
+// all pmw3360 pins are F7, B1, B3, B2
+
+
 
 // WS2812 RGB LED strip input and number of LEDs
 // #define RGB_DI_PIN D3
