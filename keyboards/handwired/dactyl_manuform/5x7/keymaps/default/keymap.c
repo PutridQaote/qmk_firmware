@@ -14,6 +14,7 @@
 #define TAB_R  LCTL(KC_TAB)
 #define TAB_L  LCTL(LSFT(KC_TAB))
 #define TAB_RO LCTL(LSFT(KC_T))
+
 #define CPY_PT LALT(KC_P3) // might as well give it a shot eh?
 #define KC_COPY LCTL(KC_C)
 #define KC_CUT LCTL(KC_X)
@@ -37,8 +38,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(_NUMPAD),KC_Z,   KC_X,    KC_C,              KC_V,     KC_B,      KC_END,
         KC_GRV,    KC_LGUI, KC_LCTL, KC_LALT,           KC_PAUSE,
 
-                                     KC_SPC, KC_LCTL,
-                                     MO(_SYMBO), KC_LSFT, //37 keys
+                                     KC_SPC,  MO(_SYMBO),
+                                     KC_LCTL, KC_LSFT,    //37 keys
         // right hand
                           KC_MPLY, KC_6,    KC_7,    KC_8,    KC_9,      KC_0,     KC_MINS,
                           KC_BSPC, KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,     KC_BSLS,
@@ -47,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_VOLU, KC_VOLD,  KC_EQL,  TG(_NUMPAD),KC_PGDN,
              KC_ENT,     KC_RSFT,
              MO(_MOUSE), KC_RCTL,
-             KC_DEL,     KC_BSPC //39 keys
+             KC_BSPC,    KC_DEL //39 keys
     ),
 
     [_NUMPAD] = LAYOUT_5x7(
@@ -57,6 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,   KC_P4,     KC_P5,     KC_P6,     KC_PPLS,   KC_PMNS,
         _______,   _______,   KC_P1,     KC_P2,     KC_P3,     KC_TAB,    _______,
         _______,   _______,   KC_P0,    KC_PDOT,    KC_P0,
+                                    _______, _______,
                                     _______, _______,
         // right hand
                           QK_BOOT,   _______,   _______,   _______,   KC_PMNS,   KC_PPLS,   _______,
