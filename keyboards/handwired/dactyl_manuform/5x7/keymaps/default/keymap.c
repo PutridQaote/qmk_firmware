@@ -39,7 +39,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,    KC_LGUI, KC_LCTL, KC_LALT,           KC_PAUSE,
 
                                      KC_SPC,  MO(_SYMBO),
-                                     KC_LCTL, KC_LSFT,    //37 keys
+                                     KC_LCTL, KC_LSFT,
+                                              MO(_MOUSE), //38 keys including footswitch
         // right hand
                           KC_MPLY, KC_6,    KC_7,    KC_8,    KC_9,      KC_0,     KC_MINS,
                           KC_BSPC, KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,     KC_BSLS,
@@ -60,6 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,   KC_P0,    KC_PDOT,    KC_P0,
                                     _______, _______,
                                     _______, _______,
+                                             _______,
         // right hand
                           QK_BOOT,   _______,   _______,   _______,   KC_PMNS,   KC_PPLS,   _______,
                           _______,   _______,   KC_P7,     KC_P8,     KC_P9,     KC_PAST,   _______,
@@ -80,6 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,   _______,   _______,   _______,
                                     _______, _______,
                                     _______, _______,
+                                             _______,
         // right hand
                           _______,   _______,   _______,   _______,  _______,   _______,   _______,
                           _______,   KC_CUT,    KC_COPY,   KC_WH_U, KC_PASTE,   KC_RCTL,   _______,
@@ -100,6 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,   _______,   _______,   _______,
                                     _______, _______,
                                     _______, _______,
+                                             _______,
         // right hand
                           _______,   KC_F6,     KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,
                           _______,   _______,   _______,   KC_UP,     KC_LBRC,   KC_RBRC,   _______,
