@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # define SPLIT_POINTING_ENABLE
 # define POINTING_DEVICE_LEFT
 # define PMW3360_CS_PIN F7
-# define PMW3360_CPI 1300
+# define PMW3360_CPI 1111
 # define POINTING_DEVICE_INVERT_Y
 # define ROTATIONAL_TRANSFORM_ANGLE -27
 // all pmw3360 pins are F7, B1, B3, B2, but CS pin is F7

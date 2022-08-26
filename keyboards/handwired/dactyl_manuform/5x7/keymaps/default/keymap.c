@@ -27,6 +27,7 @@ enum custom_keycodes {
     COPY_PTH = SAFE_RANGE,
     KC_PTCHL,
     KC_PTCHR,
+    CLEAN_PTH,
 };
 
 // details for advanced macros
@@ -40,6 +41,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // when keycode is released
         }
         break;
+
+    case CLEAN_PTH:
+      if (record->event.pressed){
+        // when keycode CLEAN_PTH is pressed
+        SEND_STRING(SS_TAP(X_BSPC) SS_TAP(X_HOME) SS_TAP(X_DEL) SS_TAP(X_END));
+      } else {
+        // when keycode is realeased
+      }
+      break;
 
     case KC_PTCHL:
         if (record->event.pressed) {
@@ -82,11 +92,11 @@ void pointing_device_init_kb(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_5x7(
         // left hand
-        KC_ESC,     KC_1,    KC_2,    KC_3,              KC_4,     KC_5,      KC_DEL,
-        KC_TAB,     KC_Q,    KC_W,    KC_E,              KC_R,     KC_T,      KC_BSPC,
-        KC_HOME,    KC_A,    KC_S,    LT(_MOUSE, KC_D),  KC_F,     KC_G,      KC_END,
-        MO(_NUMPAD),KC_Z,    KC_X,    KC_C,              KC_V,     KC_B,      KC_ENT,
-        KC_GRV,     KC_LGUI, KC_LCTL, KC_LALT,           KC_PAUSE,
+        KC_ESC,     KC_1,    KC_2,    KC_3,     KC_4,     KC_5,      KC_DEL,
+        KC_TAB,     KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,      KC_BSPC,
+        KC_HOME,    KC_A,    KC_S,    KC_D,     KC_F,     KC_G,      KC_END,
+        MO(_NUMPAD),KC_Z,    KC_X,    KC_C,     KC_V,     KC_B,      KC_ENT,
+        KC_GRV,     KC_LGUI, KC_LCTL, KC_LALT,  KC_PAUSE,
 
                                      KC_SPC,  KC_LSFT,
                                      KC_LCTL, MO(_SYMBO),
@@ -125,20 +135,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_MOUSE] = LAYOUT_5x7(
         // left hand
-        _______,   _______,   _______,   _______,   _______,   _______,   _______,
-        _______,   KC_WBAK,   KC_WFWD,   _______,   KC_WH_U,   _______,   _______,
-        KC_PTCHL,  KC_WH_L,   KC_BTN2,   _______,   KC_BTN1,   KC_WH_R,   _______,
-        _______,   _______,   _______,   _______,   KC_WH_D,   _______,   KC_PTCHR,
+        _______,   _______,   CLEAN_PTH, _______,   _______,   _______,   _______,
+        _______,   _______,   KC_PASTE,  KC_WH_U,   KC_COPY,   KC_CUT,    _______,
+        KC_PTCHL,  KC_WH_L,   KC_BTN2,   KC_WH_D,   KC_BTN1,   KC_WH_R,   _______,
+        _______,   _______,   KC_WBAK,   KC_BTN3,   KC_WFWD,   COPY_PTH,  KC_PTCHR,
         _______,   _______,   _______,   _______,   _______,
                                     _______, _______,
                                     _______, _______,
                                              _______,
         // right hand
-                          _______,   _______,   _______,   _______,  _______,   _______,   _______,
+                          _______,   _______,   _______,   _______,  CLEAN_PTH, _______,   _______,
                           _______,   KC_CUT,    KC_COPY,   KC_WH_U,  KC_PASTE,  KC_RCTL,   _______,
                           _______,   KC_LWIN,   KC_BTN1,   KC_WH_D,  KC_BTN2,   _______,   KC_ESC,
-                          _______,   COPY_PTH,  KC_WBAK,   KC_BTN3,   KC_WFWD,  KC_RSFT,   _______,
-                                                KC_WH_L,   _______,   KC_WH_R,  _______,   _______,
+                          _______,   COPY_PTH,  KC_WBAK,   KC_BTN3,  KC_WFWD,   KC_RSFT,   _______,
+                                                KC_WH_L,   _______,  KC_WH_R,   _______,   _______,
              _______, _______,
              _______, _______,
              _______, _______
