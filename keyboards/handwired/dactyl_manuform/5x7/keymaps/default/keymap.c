@@ -113,15 +113,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NUMPAD] = LAYOUT_5x7(
-        // left hand
-        QK_BOOT,   _______,   _______,   _______,   _______,   _______,   KC_NLCK,
-        KC_PSLS,   KC_PAST,   KC_P7,     KC_P8,     KC_P9,     _______,   _______,
-        KC_PMNS,   KC_PPLS,   KC_P4,     KC_P5,     KC_P6,     _______,   _______,
-        _______,   _______,   KC_P1,     KC_P2,     KC_P3,     KC_TAB,    _______,
-        _______,   _______,   KC_P0,     KC_PDOT,   KC_P0,
-                                    _______, _______,
-                                    _______, _______,
-                                             _______,
+      // left hand
+      QK_BOOT,   _______,   _______,   _______,   _______,   _______,   _______,
+      KC_PTCHL,  _______,   _______,   KC_WH_U,   KC_COPY,   KC_CUT,    KC_PASTE,
+      _______,   KC_WH_L,   KC_BTN2,   KC_WH_D,   KC_BTN1,   KC_WH_R,   CLEAN_PTH,
+      _______,   _______,   KC_WBAK,   KC_BTN3,   KC_WFWD,   COPY_PTH,  _______,
+      KC_PTCHR,  _______,   _______,   _______,   _______,
+                                  _______, _______,
+                                  _______, _______,
+                                           _______,
+
+
         // right hand
                           QK_BOOT,   _______,   _______,   _______,   _______,   _______,   _______,
                           _______,   _______,   KC_P7,     KC_P8,     KC_P9,     KC_PAST,   KC_PSLS,
@@ -134,16 +136,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_MOUSE] = LAYOUT_5x7(
-        // left hand
-        _______,   _______,   CLEAN_PTH, _______,   _______,   _______,   _______,
-        _______,   _______,   KC_PASTE,  KC_WH_U,   KC_COPY,   KC_CUT,    _______,
-        KC_PTCHL,  KC_WH_L,   KC_BTN2,   KC_WH_D,   KC_BTN1,   KC_WH_R,   _______,
-        _______,   _______,   KC_WBAK,   KC_BTN3,   KC_WFWD,   COPY_PTH,  KC_PTCHR,
-        _______,   _______,   _______,   _______,   _______,
-                                    _______, _______,
-                                    _______, _______,
-                                             _______,
-        // right hand
+
+      // left hand
+      QK_BOOT,   _______,   _______,   _______,   _______,   _______,   KC_NLCK,
+      KC_PSLS,   KC_PAST,   KC_P7,     KC_P8,     KC_P9,     _______,   _______,
+      KC_PMNS,   KC_PPLS,   KC_P4,     KC_P5,     KC_P6,     _______,   _______,
+      _______,   _______,   KC_P1,     KC_P2,     KC_P3,     KC_TAB,    _______,
+      _______,   _______,   KC_P0,     KC_PDOT,   KC_P0,
+                                  _______, _______,
+                                  _______, _______,
+                                           _______,
+      // right hand
                           _______,   _______,   _______,   _______,  CLEAN_PTH, _______,   _______,
                           _______,   KC_CUT,    KC_COPY,   KC_WH_U,  KC_PASTE,  KC_RCTL,   _______,
                           _______,   KC_LWIN,   KC_BTN1,   KC_WH_D,  KC_BTN2,   _______,   KC_ESC,
